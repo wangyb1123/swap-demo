@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+dependencies {
+    // Project reference
+    compile project(':swap-core')
+	compile project(':swap-service')
+    
+}
+
+apply plugin: 'application'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+mainClassName = 'com.demo.gradle.DemoGradle'
+
+//jar{
+//manifest.attributes "Main-Class"： "com.demo.gradle.DemoGradle"
+//}
+
+
+shadowJar {
+   baseName = 'demo-gradle-final'
+   classifier = null
+   version = null
+}
