@@ -12,6 +12,6 @@ public class StockController {
 
     @GetMapping("/stocks")
     public List<Stock> all() {
-        return Lists.newArrayList(new Stock("0005.hk", "hsbc"), new Stock("0001.hk", "CK"));
+        return Lists.newArrayList(new Stock("0005.hk", "hsbc"), new Stock("0001.hk", "CK"), new Stock("ibm.n", "IBM"));
     }
 }

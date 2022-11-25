@@ -2,4 +2,5 @@ rootProject.name = 'swap-demo'
 
 include ':swap-core'
 include ':swap-service'
+include ':swap-gui'
 include ':swap-package'

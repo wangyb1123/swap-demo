@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'com.google.cloud.tools.jib' version '3.3.1'
+}
+
+
+dependencies {
+    // Project reference
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//    compile libs.slf4j
+//    compile libs.logback
+//    compile libs.jacksonCore
+//    compile libs.metricsCore
+//    compile libs.metricsJvm
+//    compile libs.metricsJson
+//    compile libs.metricsLogback
+//    compile libs.metricsHealthchecks
+//    compile libs.metricsGraphite
+    compile libs.guava
+//    compile libs.typesafeConfig
+//    compile libs.okhttp
+//    compile libs.okhttpUrlConnection
+//    compile libs.loggingInterceptor
+//    compile libs.s3
+//    compile libs.failsafe
+//    compile libs.jsoup
+//    compile libs.sitemapgen4j
+//    compile libs.jbcrypt
+//    compile libs.jooq
+//    compile libs.jooqCodegen
+//    compile libs.flyway
+//    compile libs.connectorj
+//
+//    testCompile libs.junit
+//    testCompile libs.hsqldb
+}
+
+//jib.to.image = "gcr.io/${project.name}:${version}"
+
+jib {
+//    from {
+//        image = 'aws_account_id.dkr.ecr.region.amazonaws.com/my-base-image'
+//        auth {
+//            username = USERNAME // Defined in 'gradle.properties'.
+//            password = PASSWORD
+//        }
+//    }
+    to {
+        image = "elbruscloud/swap:${project.name}-${version}"
+    }
+}
+//jib.to.image = "${project.name}/swapservice:${version}"
