@@ -1,3 +1,10 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'com.google.cloud.tools.jib' version '3.3.1'
+}
+
 dependencies {
     compile libs.slf4j
     compile libs.logback
@@ -7,3 +14,15 @@ dependencies {
 	
 }
 
+jib {
+//    from {
+//        image = 'aws_account_id.dkr.ecr.region.amazonaws.com/my-base-image'
+//        auth {
+//            username = USERNAME // Defined in 'gradle.properties'.
+//            password = PASSWORD
+//        }
+//    }
+    to {
+        image = "elbruscloud/${project.name}:${version}"
+    }
+}
